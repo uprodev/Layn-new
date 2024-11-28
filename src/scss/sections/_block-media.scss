@@ -1,0 +1,77 @@
+.block-media {
+  padding: 22vh 0;
+
+  .row {
+    --bs-gutter-y: 1.25rem;
+  }
+
+  figure {
+    span {
+      @include img-abs-container(56.27%);
+    }
+
+    figcaption {
+      font-size: 14px;
+      margin: 23px 0 0;
+    }
+  }
+
+  &.bg-primary {
+    padding: 12.6vh 0 12.8vh;
+  }
+
+  &--cols2 {
+    figure {
+      span {
+        padding-top: 650px;
+      }
+
+      figcaption {
+        margin: 9px 0 0;
+      }
+    }
+  }
+
+  &--cols3 {
+    figure {
+      span {
+        padding-top: 173.7%;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    padding: 200px 0;
+
+    &--cols2 {
+      figure {
+        span {
+          padding-top: 500px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 150px 0;
+
+    &--cols2 {
+      figure {
+        span {
+          padding-top: 400px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 100px 0;
+
+    figure {
+      figcaption {
+        margin: 5px 0 0;
+        font-size: 12px;
+      }
+    }
+  }
+}

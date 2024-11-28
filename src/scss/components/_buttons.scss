@@ -1,0 +1,61 @@
+.btn {
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: 0.05em;
+  padding-bottom: 2px;
+  transition: all 0.5s;
+
+  svg {
+    display: block;
+    margin-left: 10px;
+    margin-top: 4px;
+
+    path {
+      transition: all 0.5s;
+    }
+  }
+
+  &.btn-outline-white {
+    svg path {
+      fill: $white;
+    }
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+
+      svg path {
+        fill: $black;
+      }
+    }
+  }
+
+  &.btn-outline-dark {
+    svg path {
+      fill: $dark;
+    }
+
+    &:hover {
+      background-color: $dark;
+      color: $white;
+
+      svg path {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  max-width: 240px;
+
+  .btn {
+    & + .btn {
+      margin-top: 1rem;
+    }
+  }
+}

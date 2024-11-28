@@ -1,0 +1,57 @@
+.block-offer {
+  padding: 0 0 22vh;
+
+  .block-header {
+    margin: 0 0 4rem;
+  }
+
+  .cp-tabs {
+    .tab-content {
+      .tab-pane {
+        .buttons {
+          padding-top: 2rem;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    padding: 0 0 200px 0;
+  }
+  @include media-breakpoint-down(lg) {
+    padding: 0 0 150px 0;
+  }
+  @include media-breakpoint-down(md) {
+    padding: 0 0 100px 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    .cp-tabs {
+      .tab-content {
+        min-height: 100%;
+        display: flex;
+
+        .tab-pane {
+          &.active {
+            display: flex;
+            flex-direction: column;
+
+            .buttons {
+              margin-top: auto;
+            }
+          }
+
+          p {
+            letter-spacing: 0.047em;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .block-header {
+      margin: 0 0 7.4rem;
+    }
+  }
+}
