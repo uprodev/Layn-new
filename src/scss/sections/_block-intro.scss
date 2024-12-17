@@ -1,0 +1,31 @@
+.block-intro {
+  padding: 22vh 0;
+
+  hr {
+    max-width: 240px;
+    margin: 0 0 4rem;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+  }
+
+  h2 {
+    margin: 0 0 4rem;
+  }
+
+  h2,
+  .buttons {
+    opacity: 0;
+  }
+
+  @include media-breakpoint-down(xl) {
+    padding: 200px 0;
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 150px 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 100px 0;
+  }
+}

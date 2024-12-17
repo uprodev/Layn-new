@@ -1,0 +1,166 @@
+.block-contact-form {
+  padding: 22vh 0 20.6vh;
+  position: relative;
+
+  &:after {
+    content: "";
+    height: 1px;
+    background-color: rgba($white, 0.5);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: calc(100% - #{$container-gutter});
+    max-width: $container-max;
+  }
+
+  .block-header {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 0 4rem;
+
+    .btn-to-top {
+      color: $gray-300;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 0;
+      white-space: nowrap;
+
+      svg {
+        margin: 0 0 -4px 24px;
+
+        path {
+          transition: all 0.5s;
+        }
+      }
+
+      &:hover {
+        color: $white;
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+
+    h2 {
+      margin: 2rem 0 0;
+    }
+  }
+
+  form {
+    .row {
+      margin-bottom: 1rem;
+    }
+
+    .submit {
+      .btn {
+        width: 100%;
+      }
+    }
+
+    textarea {
+      resize: none;
+      height: 140px;
+    }
+  }
+
+  &.bg-primary {
+    .block-header {
+      .btn-to-top {
+        color: $white;
+
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+
+        &:hover {
+          color: $gray-200;
+
+          svg path {
+            fill: $gray-200;
+          }
+        }
+      }
+    }
+
+    form {
+      .form-control,
+      .form-select {
+        background-color: $primary;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .block-header {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .btn-to-top {
+        padding: 12px;
+      }
+
+      h2 {
+        margin: 0;
+        max-width: 50%;
+      }
+    }
+
+    form {
+      .form-label {
+        margin: 1rem 0 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .block-header {
+      h2 {
+        max-width: 42%;
+      }
+    }
+
+    form {
+      .submit {
+        align-items: center;
+
+        .btn {
+          max-width: 240px;
+        }
+
+        p {
+          margin: 0 50px 0 0;
+          max-width: 58.5%;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .block-header {
+      margin: 0 0 5rem;
+    }
+
+    form {
+      .submit {
+        padding: 4rem 0 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    padding: 200px 0;
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 150px 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 100px 0;
+  }
+}

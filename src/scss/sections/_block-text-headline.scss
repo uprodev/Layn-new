@@ -1,0 +1,44 @@
+.block-text-headline {
+  padding: 22vh 0;
+
+  .subheadline {
+    margin: 0 0 4rem;
+    @extend .subheadline-animated;
+  }
+
+  p {
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .buttons {
+    padding: 31px 0 0;
+  }
+
+  h2,
+  p,
+  .buttons {
+    @extend .text-animated;
+  }
+
+  @include media-breakpoint-down(xl) {
+    padding: 200px 0;
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 150px 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 100px 0;
+
+    .subheadline {
+      margin: 0 0 3rem;
+    }
+
+    h2 {
+      margin: 0 0 2rem;
+    }
+  }
+}

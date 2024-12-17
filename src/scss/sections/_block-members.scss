@@ -1,0 +1,174 @@
+.block-members {
+  .block-header {
+    padding: 100px 0;
+
+    .subheadline {
+      margin: 0 0 3rem;
+      @extend .subheadline-animated;
+    }
+
+    h2 {
+      @extend .text-animated;
+    }
+  }
+
+  .cp-tabs {
+    .nav-tabs {
+      .nav-item {
+        .nav-link {
+          color: $dark;
+          opacity: 0.4;
+
+          &.active {
+            color: $dark;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .text {
+      margin: 0 0 3rem;
+
+      ul {
+        margin: 0 0 1rem;
+        padding: 0;
+        list-style: none;
+        line-height: 2;
+      }
+      .buttons {
+        max-width: none;
+      }
+    }
+
+    figure {
+      span {
+        @include img-abs-container(400px);
+      }
+      figcaption {
+        font-size: 12px;
+        margin: 5px 0 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .block-header {
+      padding: 150px 0;
+    }
+
+    .cp-tabs {
+      .nav-wrapper {
+        margin-bottom: -50px;
+      }
+
+      .nav-tabs {
+        ul {
+          display: flex;
+
+          .nav-item {
+            margin: 0 24px 0 0;
+            width: 100%;
+
+            &:last-child {
+              margin: 0;
+            }
+
+            .nav-link {
+              padding: 1.5rem 0 0;
+              border-width: 1px 0 0;
+              border-color: $dark;
+
+              &.active {
+                border-color: $dark;
+              }
+            }
+          }
+        }
+      }
+
+      .text {
+        padding: 100px 0 0;
+        margin: 0;
+      }
+
+      figure {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        figcaption {
+          flex: 0 0 auto;
+        }
+
+        span {
+          padding: 0;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .block-header {
+      padding: 200px 0;
+    }
+
+    .cp-tabs {
+      .nav-tabs {
+        font-size: 18px;
+      }
+
+      .text {
+        padding: 100px 0 0;
+        margin: 0;
+
+        .buttons {
+          align-items: flex-end;
+          .btn {
+            width: 100%;
+            max-width: 240px;
+          }
+        }
+      }
+
+      figure {
+        figcaption {
+          font-size: 14px;
+          margin: 10px 0 0;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .block-header {
+      padding: 22vh 0;
+
+      .subheadline {
+        margin: 0 0 4rem;
+      }
+    }
+
+    .cp-tabs {
+      .text {
+        padding: 156px 0 0;
+
+        p {
+          margin-bottom: 1.2rem;
+        }
+
+        ul {
+          margin: 2.65rem 0;
+
+          li {
+            margin: 0 0 10px;
+          }
+        }
+        .buttons {
+          padding: 29px 0 0;
+        }
+      }
+    }
+  }
+}

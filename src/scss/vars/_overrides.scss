@@ -1,0 +1,91 @@
+// font-family
+$font-family-base: "Roobert", sans-serif;
+$font-family-headlines: "Brockmann Medium", sans-serif;
+
+// colors
+$black: #000;
+$white: #fff;
+$primary: #6a3624;
+
+$gray-100: #cbcbcb;
+$gray-200: #929292;
+$gray-300: #6d6862;
+$gray-900: #111111;
+
+$theme-colors: (
+  "primary": $primary,
+  "light": $gray-300,
+  "dark": $gray-900,
+  "black": $black,
+  "white": $white,
+);
+
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+$enable-gradients: true;
+
+// font-size
+$font-size-base: 1rem;
+$line-height-base: 1.37;
+
+$h1-font-size: 3.75rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.125rem;
+
+$h1-font-size-sm: 2.5rem;
+$h2-font-size-sm: 1.7rem;
+$h3-font-size-sm: 1.5rem;
+$h4-font-size-sm: 1rem;
+
+$grid-gutter-width: 1.25rem;
+$container-gutter: 2rem;
+$container-max: 1420px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1452px,
+);
+
+// buttons
+$btn-padding-y: 0;
+$btn-padding-x: 0.75em;
+$btn-font-size: 1rem;
+$btn-line-height: 1.4;
+$btn-white-space: "nowrap";
+$btn-border-width: 1px;
+$btn-border-radius: 0;
+$btn-box-shadow: none;
+$btn-focus-box-shadow: none;
+$btn-disabled-opacity: 0.5;
+$btn-active-box-shadow: none;
+
+// forms
+$input-padding-y: 0.9375rem;
+$input-padding-x: 1.25rem;
+$input-font-family: $font-family-base;
+$input-font-size: 1.125rem;
+$input-font-weight: 400;
+$input-line-height: 2;
+$input-bg: $black;
+
+$input-color: $white;
+$input-border-color: $gray-200;
+$input-border-width: 1px;
+$input-box-shadow: none;
+$input-border-radius: 0;
+
+$input-focus-bg: $input-bg;
+$input-focus-border-color: $white;
+$input-focus-color: $input-color;
+
+$input-placeholder-color: $gray-200;
+
+$form-select-indicator-color: $white;
+$form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+
+$form-label-font-size: 1.25rem;
+$form-label-margin-bottom: 0.5rem;
+$form-label-font-weight: 400;

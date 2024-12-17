@@ -1,0 +1,68 @@
+.block-brands {
+  padding: 22vh 0;
+
+  ul {
+    padding: 10px 0 0;
+    margin-bottom: 0;
+    list-style: none;
+    justify-content: center;
+    --bs-gutter-y: 2.7rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 33.3333%;
+      padding: 0;
+
+      figure {
+        padding: 0 1rem;
+
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    padding: 200px 0;
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 150px 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 100px 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    ul {
+      li {
+        max-width: 25%;
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    ul {
+      li {
+        max-width: 20%;
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    ul {
+      li {
+        max-width: 16.66667%;
+
+        figure {
+          padding: 0 0.6rem;
+        }
+      }
+    }
+  }
+}

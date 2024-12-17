@@ -1,0 +1,71 @@
+.block-steps {
+  padding: 22vh 0;
+
+  .row {
+    --bs-gutter-y: 7.5rem;
+    & > div {
+      &:nth-child(3n + 2),
+      &:nth-child(3n + 3) {
+        @extend .offset-lg-1;
+      }
+    }
+  }
+
+  .icon {
+    display: block;
+    padding: 0 0 1.5rem;
+    margin: 0 0 1.5rem;
+    position: relative;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 240px;
+      height: 1px;
+      background-color: $gray-300;
+      transform: scaleX(0);
+      transform-origin: 0;
+      transition: all 0.5s;
+    }
+
+    &.in-view {
+      opacity: 1;
+
+      &:before {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .buttons {
+    padding: 1.5rem 0 0;
+  }
+
+  @include media-breakpoint-down(xl) {
+    padding: 200px 0;
+
+    .row {
+      --bs-gutter-y: 4rem;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 150px 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 100px 0;
+
+    .row {
+      --bs-gutter-y: 3rem;
+    }
+  }
+}
