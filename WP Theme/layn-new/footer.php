@@ -11,7 +11,7 @@ $copyright = get_field('copyright', 'options');
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-md-2 col-lg-5">
-                <?php if(!empty($socs)):?>}
+                <?php if(!empty($socs)):?>
                     <div class="socials">
                         <?php foreach($socs as $soc):
                             $svgUrl = $soc['image'];
