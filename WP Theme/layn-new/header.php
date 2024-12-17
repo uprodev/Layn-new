@@ -19,6 +19,17 @@ $logo = get_field('logo', 'options');
 $show_preloader = get_field('show_preloader', 'options');
 $preloader_logo = get_field('preloader_logo', 'options');
 
+if(is_front_page()){
+    $style = ' page-landing bg-dark';
+}else{
+    $style_type = get_field('style' , get_the_ID());
+    if($style_type){
+        $style = ' bg-dark';
+    }else{
+        $style = ' bg-white text-dark';
+    }
+}
+
 ?>
 
 <body <?php body_class() ?>>
@@ -51,5 +62,5 @@ $preloader_logo = get_field('preloader_logo', 'options');
     </div>
 <?php endif;?>
 
-<div class="global-wrapper page-landing bg-dark">
+<div class="global-wrapper<?= $style;?>">
     <main class="content">

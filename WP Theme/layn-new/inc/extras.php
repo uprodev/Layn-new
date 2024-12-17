@@ -57,3 +57,12 @@ add_filter( 'excerpt_more', function( $more ) {
 } );
 
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+
+function my_acf_google_map_api_key() {
+
+    $key_map = get_field('google_map_api_key', 'options');
+
+    acf_update_setting( 'google_api_key', $key_map );
+}
+add_action( 'acf/init', 'my_acf_google_map_api_key' );
