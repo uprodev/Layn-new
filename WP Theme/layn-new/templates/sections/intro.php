@@ -2,6 +2,7 @@
 
 $link = get_sub_field('link');
 $title = get_sub_field('title');
+$style_type = get_field('style' , get_the_ID());
 
 ?>
 
@@ -20,7 +21,8 @@ $title = get_sub_field('title');
                             $link_title = $link['title'];
                             $link_target = $link['target'] ? $link['target'] : '_self';?>
                             <div class="buttons">
-                                <a href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>" class="btn btn-outline-dark btn-anchor">
+                                <a href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>"
+                                   class="btn btn-outline-<?= $style_type?'white':'dark';?> btn-anchor">
                                     <?= esc_html($link_title); ?>
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g>
