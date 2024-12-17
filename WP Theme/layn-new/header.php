@@ -13,27 +13,43 @@
 		<?php wp_head();?>
 </head>
 
+<?php
+
+$logo = get_field('logo', 'options');
+$show_preloader = get_field('show_preloader', 'options');
+$preloader_logo = get_field('preloader_logo', 'options');
+
+?>
+
 <body <?php body_class() ?>>
 <header class="header">
     <div class="container-fluid">
         <div class="header-logo">
-            <a href="#">
-                <img src="./images/logo.svg" alt="" />
+            <a href="<?= get_home_url();?>">
+                <?php if($logo):?>
+                    <img src="<?= $logo['url'];?>" alt="<?= $logo['alt'];?>" />
+                <?php endif;?>
             </a>
         </div>
         <nav class="header-navigation">
-            <ul>
-                <li><a href="creative.html">Creative</a></li>
-                <li><a href="assembly.html">Assembly</a></li>
-            </ul>
+            <?php wp_nav_menu([
+                'theme_location' => 'main-menu',
+                'container' => false,
+                'menu_class' => '',
+            ]);?>
         </nav>
     </div>
 </header>
-<div id="preloader" class="preloader">
-    <div class="preloader-logo">
-        <img src="<?= get_template_directory_uri();?>/images/logo.svg" alt="" />
+
+<?php if( $show_preloader):?>
+    <div id="preloader" class="preloader">
+        <div class="preloader-logo">
+            <?php if($preloader_logo):?>
+                <img src="<?= $preloader_logo['url'];?>" alt="<?= $preloader_logo['alt'];?>" />
+            <?php endif;?>
+        </div>
     </div>
-</div>
+<?php endif;?>
 
 <div class="global-wrapper page-landing bg-dark">
     <main class="content">
