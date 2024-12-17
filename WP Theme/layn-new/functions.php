@@ -12,7 +12,6 @@ function theme_register_nav_menu(){
 	register_nav_menus( array(
         'main-menu' => 'Header',
         'footer-menu'  => 'Footer',
-        'footer-bottom'  => 'Footer Bottom',
        )
     );
 	add_theme_support( 'post-thumbnails'); 
