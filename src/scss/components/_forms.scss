@@ -9,6 +9,10 @@
     line-height: 1;
   }
 
+  .form-select {
+    background-size: auto;
+  }
+
   @include media-breakpoint-down(md) {
     .form-control {
       padding-top: 1rem;

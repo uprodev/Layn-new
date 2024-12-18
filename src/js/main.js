@@ -120,6 +120,40 @@ jQuery(document).ready(function ($) {
       },
     });
   }
+
+  if (document.querySelector(".block-media-slider")) {
+    document.querySelectorAll(".block-media-slider .swiper-slide").forEach((slide, index) => {
+      if (index % 2 === 0) {
+        slide.classList.add("slide-even");
+      } else {
+        slide.classList.add("slide-odd");
+      }
+    });
+
+    const swiper2 = new Swiper(".block-media-slider .swiper", {
+      loop: true,
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      autoplay: {
+        delay: 5000,
+      },
+      pagination: {
+        el: ".block-media-slider .swiper-pagination",
+        type: "fraction",
+        renderFraction: function (currentClass, totalClass) {
+          return '<span class="' + currentClass + '"></span>' + " | " + '<span class="' + totalClass + '"></span>';
+        },
+      },
+
+      breakpoints: {
+        768: {
+          slidesPerView: "auto",
+          spaceBetween: 0,
+          // slidesPerGroup: 2,
+        },
+      },
+    });
+  }
 });
 
 function initMap() {

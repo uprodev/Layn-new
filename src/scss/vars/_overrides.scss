@@ -84,7 +84,7 @@ $input-focus-color: $input-color;
 $input-placeholder-color: $gray-200;
 
 $form-select-indicator-color: $white;
-$form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+$form-select-indicator: url("data:image/svg+xml,<svg width='21' height='24' viewBox='0 0 21 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M11.13 0.148438L9.75 0.148438L9.75 18.9384L11.13 18.9384L11.13 0.148438Z' fill='white'/><path d='M11.4172 22.6901L20.454 13.6533L19.4782 12.6774L10.4414 21.7143L1.40458 12.6774L0.428774 13.6533L9.4656 22.6901L10.4414 23.6659L11.4172 22.6901Z' fill='white'/></svg>");
 
 $form-label-font-size: 1.25rem;
 $form-label-margin-bottom: 0.5rem;
