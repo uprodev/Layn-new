@@ -2,10 +2,11 @@
 
 $title = get_sub_field('title');
 $form = get_sub_field('form');
+$background = get_sub_field('background');
 
 ?>
 
-<section id="form" class="block-contact-form bg-primary text-white">
+<section id="form" class="block-contact-form<?= $background?' bg-black':' bg-primary text-white';?>">
     <div class="container-fluid">
         <div class="block-header">
             <?php if($title): ?>
