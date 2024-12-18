@@ -10,9 +10,9 @@ $link = get_sub_field('link');
 <section id="offer" class="block-text-headline">
     <div class="container-fluid">
         <?php if ($subtitle) : ?>
-        <div class="block-header">
-            <div class="subheadline"><?= $subtitle;?></div>
-        </div>
+            <div class="block-header">
+                <div class="subheadline"><?= $subtitle;?></div>
+            </div>
         <?php endif; ?>
 
         <div class="row justify-content-between">
