@@ -8,7 +8,7 @@ if($brands):
     <section class="block-brands bg-black">
         <div class="container-fluid">
             <ul class="row">
-                
+
                 <?php foreach( $brands as $im ): ?>
                     <li>
                         <figure><img src="<?= $im['url'];?>" alt="<?= $im['alt'];?>"></figure>
