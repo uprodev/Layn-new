@@ -2,6 +2,7 @@
 
 $title = get_sub_field('title');
 $subtitle = get_sub_field('subtitle');
+$membership = get_sub_field('membership');
 
 ?>
 
@@ -20,96 +21,70 @@ $subtitle = get_sub_field('subtitle');
             </div>
         </div>
 
-        <div class="cp-tabs">
-            <div class="nav-wrapper">
-                <div class="row">
-                    <div class="col-md-6 col-lg-5">
-                        <nav class="nav nav-tabs">
-                            <ul role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="tab1Nav" data-bs-toggle="tab" href="#social" role="tab" aria-controls="social" aria-selected="true">Social</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tab2Nav" data-bs-toggle="tab" href="#professional" role="tab" aria-controls="professional" aria-selected="false">Professional</a>
-                                </li>
-                            </ul>
-                        </nav>
+        <?php if($membership):
+            $i = 1; ?>
+            <div class="cp-tabs">
+                <div class="nav-wrapper">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-5">
+                            <nav class="nav nav-tabs">
+                                <ul role="tablist">
+                                    <?php foreach($membership as $member):?>
+                                        <li class="nav-item">
+                                            <a class="nav-link<?= $i==1?' active':'';?>" id="tab<?= $i;?>Nav" data-bs-toggle="tab" href="#<?= strtolower($member['name']);?>" role="tab" aria-controls="social" aria-selected="true"><?= $member['name'];?></a>
+                                        </li>
+                                    <?php $i++; endforeach; $i=1;?>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="tab-content" id="tabContent">
-                <div class="tab-pane fade show active" id="social" role="tabpanel">
-                    <div class="row justify-content-between">
-                        <div class="col-md-6 col-lg-5">
-                            <div class="text">
-                                <p>A membership plan for those who wish to participate in social events and networking opportunities. At launch these will include a casual weekly social as well as a monthly larger social and festive events throughout the year.</p>
-                                <ul>
-                                    <li>Drinks Socials</li>
-                                    <li>Industry Talks</li>
-                                    <li>Exhibitions</li>
-                                    <li>Design Festivals</li>
-                                    <li>Discord Channel</li>
-                                </ul>
-                                <p>The pricing plan is yet to be determined, please make sure to register your interest to keep up do date on memberships and pricing.</p>
-                                <p><small>*Prices are subject to change, as we look to increase our offerings of events and provide more for our members monthly prices may change.</small></p>
-                                <div class="buttons">
-                                    <a href="#form" class="btn btn-outline-dark btn-anchor">
-                                        Register interest
-                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g>
-                                                <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
-                                                <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
-                                            </g>
-                                        </svg>
-                                    </a>
+                <div class="tab-content" id="tabContent">
+                    <?php foreach($membership as $member):
+                        $link = $member['link'];?>
+                        <div class="tab-pane fade<?= $i==1?' show active':'';?>" id="<?= strtolower($member['name']);?>"
+                             role="tabpanel">
+                            <div class="row justify-content-between">
+                                <div class="col-md-6 col-lg-5">
+                                    <div class="text">
+                                        <?= $member['text'];?>
+                                        <?php if( $link ):
+                                            $link_url = $link['url'];
+                                            $link_title = $link['title'];
+                                            $link_target = $link['target'] ? $link['target'] : '_self';
+                                            ?>
+                                            <div class="buttons">
+                                                <a href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>" class="btn btn-outline-dark btn-anchor">
+                                                    <?= esc_html($link_title); ?>
+                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                                                            <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
+                                                        </g>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure>
+                                        <?php if($member['image']):?>
+                                            <span><img src="<?= $member['image']['url'];?>" alt="<?=
+                                                $member['image']['alt'];?>" /></span>
+                                        <?php endif;?>
+                                        <?php if($member['caption']):?>
+                                            <figcaption><?= $member['caption']; ?></figcaption>
+                                        <?php endif;?>
+                                    </figure>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <figure>
-                                <span><img src="images/img08.jpg" alt="" /></span>
-                                <figcaption>Drinks socials for members of LAYN Assembly</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="professional" role="tabpanel">
-                    <div class="row justify-content-between">
-                        <div class="col-md-6 col-lg-5">
-                            <div class="text">
-                                <p>A membership plan for those who wish to participate in social events and networking opportunities. At launch these will include a casual weekly social as well as a monthly larger social and festive events throughout the year.</p>
-                                <ul>
-                                    <li>Drinks Socials</li>
-                                    <li>Industry Talks</li>
-                                    <li>Exhibitions</li>
-                                    <li>Design Festivals</li>
-                                    <li>Discord Channel</li>
-                                </ul>
-                                <p>The pricing plan is yet to be determined, please make sure to register your interest to keep up do date on memberships and pricing.</p>
-                                <p><small>*Prices are subject to change, as we look to increase our offerings of events and provide more for our members monthly prices may change.</small></p>
-                                <div class="buttons">
-                                    <a href="#form" class="btn btn-outline-dark btn-anchor">
-                                        Register interest
-                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g>
-                                                <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
-                                                <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
-                                            </g>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <figure>
-                                <span><img src="images/banner1.jpg" alt="" /></span>
-                                <figcaption>Drinks socials for members of LAYN Assembly</figcaption>
-                            </figure>
-                        </div>
-                    </div>
+                    <?php $i++; endforeach; $i=1;?>
                 </div>
             </div>
-        </div>
+        <?php endif;?>
+
     </div>
 </section>
