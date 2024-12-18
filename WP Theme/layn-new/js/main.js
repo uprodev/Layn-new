@@ -26,28 +26,28 @@ jQuery(document).ready(function ($) {
     tl.set(".global-wrapper.page-landing", {
       opacity: 1,
     })
-      .to(".preloader-logo", {
-        opacity: 1,
-        ease: "none",
-        duration: 1.5,
-      })
-      .to(".preloader-logo", {
-        opacity: 0,
-        ease: "none",
-        duration: 1.5,
-      })
-      .to(
-        ".preloader",
-        {
+        .to(".preloader-logo", {
+          opacity: 1,
+          ease: "none",
+          duration: 1.5,
+        })
+        .to(".preloader-logo", {
           opacity: 0,
           ease: "none",
-          duration: 1,
-          onComplete: function () {
-            $(".preloader").hide();
-          },
-        },
-        "-=0.2"
-      );
+          duration: 1.5,
+        })
+        .to(
+            ".preloader",
+            {
+              opacity: 0,
+              ease: "none",
+              duration: 1,
+              onComplete: function () {
+                $(".preloader").hide();
+              },
+            },
+            "-=0.2"
+        );
   }
 
   if ($("#preloader").length) {
@@ -117,6 +117,40 @@ jQuery(document).ready(function ($) {
       loop: true,
       autoplay: {
         delay: 3000,
+      },
+    });
+  }
+
+  if (document.querySelector(".block-media-slider")) {
+    document.querySelectorAll(".block-media-slider .swiper-slide").forEach((slide, index) => {
+      if (index % 2 === 0) {
+        slide.classList.add("slide-even");
+      } else {
+        slide.classList.add("slide-odd");
+      }
+    });
+
+    const swiper2 = new Swiper(".block-media-slider .swiper", {
+      loop: true,
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      autoplay: {
+        delay: 5000,
+      },
+      pagination: {
+        el: ".block-media-slider .swiper-pagination",
+        type: "fraction",
+        renderFraction: function (currentClass, totalClass) {
+          return '<span class="' + currentClass + '"></span>' + " | " + '<span class="' + totalClass + '"></span>';
+        },
+      },
+
+      breakpoints: {
+        768: {
+          slidesPerView: "auto",
+          spaceBetween: 0,
+          // slidesPerGroup: 2,
+        },
       },
     });
   }
@@ -260,7 +294,7 @@ function initMap() {
 
   if (document.querySelector("#map")) {
     let map,
-      mapContainer = document.getElementById("map");
+        mapContainer = document.getElementById("map");
     let markers = [];
     let mapZoom = 15;
 
