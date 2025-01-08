@@ -13,7 +13,7 @@ $link = get_sub_field('link');
                 $s = 1;
                 foreach ($steps as $step):?>
                     <div class="col-md-4 col-lg-3">
-                        <span class="icon"><img src="<?= get_template_directory_uri();?>/images/ico-0<?= $s;?>.svg" alt="num<?= $s;?>" /></span>
+                        <span class="icon">0<span class="counter counter<?= $s;?>"></span></span>
                         <p><?= $step['step'];?></p>
                     </div>
                 <?php $s++; endforeach;
