@@ -1,20 +1,24 @@
 jQuery(document).ready(function ($) {
+  const textsToSplit = document.querySelectorAll(".block-banner h1, .block-banner p, .block-intro h2, .block-text-headline h2, .block-text-headline p, .block-steps p, .block-services h2, .block-services h4, .block-services li, .cp-tabs .nav-link, .tab-pane p, .tab-pane li, .block-contact-form .block-header h2, .block-members h2");
+
   !(function () {
-    const blocks = document.querySelectorAll(".block-text-headline .subheadline, .block-text-headline h2, .block-text-headline p, .block-text-headline .buttons, .block-services .subheadline, .block-services h2, .block-offer .subheadline, .block-offer .cp-tabs, .block-map .subheadline, .block-members .subheadline, .block-members h2, .block-steps .icon");
+    const blocks = document.querySelectorAll(".block-banner h1, .block-banner p, .block-intro h2, .block-text-headline h2, .block-text-headline p, .block-steps p, .block-services h2, .block-services h4, .block-services li, .cp-tabs .nav-link, .tab-pane p, .tab-pane li, .block-contact-form .block-header h2, .buttons, .block-map .block-header .subheadline, .block-members .block-header .subheadline, .block-members h2, .block-offer .block-header .subheadline, .block-services .block-header .subheadline, .block-text-headline .subheadline, .subheadline-animated, .counter");
     [].forEach.call(blocks, ($item) => {
-      function onScroll() {
-        let delta = $item.getBoundingClientRect().top - window.innerHeight <= ($item.offsetHeight * -1) / 4 && !$item.classList.contains("in-view");
-        if (delta) {
-          setTimeout(() => {
-            $item.classList.remove("in-view-detect");
-            $item.classList.add("in-view");
-          }, 200);
+      if ($item) {
+        function onScroll() {
+          let delta = $item.getBoundingClientRect().top - window.innerHeight <= ($item.offsetHeight * -1) / 4 && !$item.classList.contains("in-view");
+          if (delta) {
+            setTimeout(() => {
+              $item.classList.remove("in-view-detect");
+              $item.classList.add("in-view");
+            }, 300);
+          }
         }
-      }
-      onScroll();
-      window.addEventListener("scroll", (e) => {
         onScroll();
-      });
+        window.addEventListener("scroll", (e) => {
+          onScroll();
+        });
+      }
     });
   })();
 
@@ -49,6 +53,23 @@ jQuery(document).ready(function ($) {
         "-=0.2"
       );
   }
+
+  textsToSplit.forEach((text) => {
+    const txt = new SplitType(text);
+    const container = document.querySelector(".global-wrapper");
+    let previousContainerWidth = null;
+
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.contentBoxSize) {
+          const contentBoxSize = entry.contentBoxSize[0];
+          txt.split();
+        }
+      }
+    });
+
+    resizeObserver.observe(container);
+  });
 
   if ($("#preloader").length) {
     preloader();

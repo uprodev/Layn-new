@@ -39,6 +39,7 @@ $h4-font-size-sm: 1rem;
 
 $grid-gutter-width: 1.25rem;
 $container-gutter: 2rem;
+$container-gutter-lg: 14vw;
 $container-max: 1420px;
 
 $grid-breakpoints: (
@@ -63,7 +64,7 @@ $btn-disabled-opacity: 0.5;
 $btn-active-box-shadow: none;
 
 // forms
-$input-padding-y: 0.9375rem;
+$input-padding-y: 0.5rem;
 $input-padding-x: 1.25rem;
 $input-font-family: $font-family-base;
 $input-font-size: 1.125rem;

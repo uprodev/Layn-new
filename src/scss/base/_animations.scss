@@ -1,0 +1,71 @@
+@mixin staggered_transitions($nth: 1, $items: 30, $initial: 0, $step: 0.1) {
+  @for $i from $nth through $items {
+    &:nth-child(#{$i}) {
+      .word {
+        transition-delay: #{$initial}s;
+      }
+    }
+    $initial: $initial + $step;
+  }
+}
+
+.block-banner h1,
+.block-banner p,
+.block-intro h2,
+.block-text-headline h2,
+.block-text-headline p,
+.block-steps p,
+.block-services h2,
+.block-services h4,
+.block-services li,
+.cp-tabs .nav-link,
+.tab-pane p,
+.tab-pane li,
+.block-contact-form .block-header h2,
+.block-members h2 {
+  visibility: hidden;
+
+  .line {
+    overflow: hidden;
+    @include staggered_transitions;
+
+    .word {
+      transition: top 1s cubic-bezier(0.17, 0.84, 0.44, 1) 0s;
+      top: 100px;
+      position: relative;
+    }
+  }
+
+  &.in-view {
+    visibility: visible;
+    .line {
+      .word {
+        top: 0;
+      }
+    }
+  }
+}
+
+.buttons {
+  visibility: hidden;
+
+  span {
+    overflow: hidden;
+    display: inline-block;
+
+    .btn {
+      transition: top 1s cubic-bezier(0.17, 0.84, 0.44, 1) 0s;
+      top: 100px;
+      position: relative;
+    }
+  }
+
+  &.in-view {
+    visibility: visible;
+    span {
+      .btn {
+        top: 0;
+      }
+    }
+  }
+}

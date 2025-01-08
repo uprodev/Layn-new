@@ -53,9 +53,14 @@
   flex-direction: column;
   max-width: 240px;
 
-  .btn {
-    & + .btn {
+  & > span {
+    width: 100%;
+    & + span {
       margin-top: 1rem;
+    }
+
+    .btn {
+      width: 100%;
     }
   }
 }

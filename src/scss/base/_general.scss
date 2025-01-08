@@ -60,9 +60,14 @@ body {
 }
 
 .container-fluid {
-  max-width: calc(#{$container-max} + #{$container-gutter});
+  max-width: calc(#{$container-max} + #{$container-gutter-lg});
   padding-left: calc(#{$container-gutter} / 2);
   padding-right: calc(#{$container-gutter} / 2);
+
+  @include media-breakpoint-up(lg) {
+    padding-left: calc(#{$container-gutter-lg} / 2);
+    padding-right: calc(#{$container-gutter-lg} / 2);
+  }
 }
 
 figure {
