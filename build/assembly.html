@@ -10,28 +10,30 @@
     <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png" />
     <!-- 180×180 -->
     <link rel="icon" href="favicons/favicon.ico" />
-    <style>
-    .global-wrapper.page-landing{opacity:0}.preloader{position:fixed;left:0;top:0;width:100vw;height:100vh;background-color:#111;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transform-origin:center}.preloader .preloader-logo{margin:0 0 20px;opacity:0}
-    </style>
+    <style>.global-wrapper.page-landing {opacity: 0;}.preloader {position: fixed;left: 0;top: 0;width: 100vw;height: 100vh;background-color: #111;z-index: 9999;display: flex;flex-direction: column;align-items: center;justify-content: center; transform-origin: center;}.preloader .preloader-logo {margin: 0 0 20px;opacity: 0;}.page-assembly .preloader {background-color: #6a3624;}</style>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-<header class="header">
-  <div class="container-fluid">
-    <div class="header-logo">
-      <a href="#">
-        <img src="./images/logo.svg" alt="" />
-      </a>
+<body class="page-assembly">
+  <header class="header">
+    <div class="container-fluid">
+      <div class="header-logo">
+        <a href="#">
+          <img src="./images/logo.svg" alt="" />
+        </a>
+      </div>
+      <nav class="header-navigation">
+        <ul>
+          <li><a href="creative.html">Creative</a></li>
+          <li class="current-menu-item"><a href="assembly.html">Assembly</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="header-navigation">
-      <ul>
-        <li><a href="creative.html">Creative</a></li>
-        <li class="current-menu-item"><a href="assembly.html">Assembly</a></li>
-      </ul>
-    </nav>
+  </header>
+<div id="preloader" class="preloader">
+  <div class="preloader-logo">
+    <img src="./images/logo.svg" alt="" />
   </div>
-</header>
-
+</div>
 
 <div class="global-wrapper bg-white text-dark">
     <main class="content">
@@ -495,7 +497,13 @@
                   <label for="i7" class="form-label">Location</label>
                 </div>
                 <div class="col-md-7">
-                  <input type="text" id="i7" class="form-control" />
+                  <select id="i7" class="form-select">
+                    <option value="0"></option>
+                    <option value="London SW, UK">London SW, UK</option>
+                    <option value="London East, UK">London East, UK</option>
+                    <option value="Manchester, UK">Manchester, UK</option>
+                    <option value="Birmingham, UK">Birmingham, UK</option>
+                  </select>
                 </div>
               </div>
               <div class="row">
@@ -535,10 +543,10 @@
                     <p>Please read our privacy policy and cookies policy so you understand how we collect and use your personal data.</p>
                     <button type="submit" class="btn btn-outline-white">
                       Register interest
-                      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g>
-                          <path d="M1.48438 11.413V12.793H20.2744V11.413H1.48438Z" fill="white" />
-                          <path d="M24.026 11.1297L14.9892 2.09284L14.0134 3.06864L23.0502 12.1055L14.0134 21.1423L14.9892 22.1181L24.026 13.0813L25.0018 12.1055L24.026 11.1297Z" fill="white" />
+                          <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                          <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
                         </g>
                       </svg>
                     </button>

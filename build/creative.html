@@ -10,28 +10,30 @@
     <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png" />
     <!-- 180×180 -->
     <link rel="icon" href="favicons/favicon.ico" />
-    <style>
-    .global-wrapper.page-landing{opacity:0}.preloader{position:fixed;left:0;top:0;width:100vw;height:100vh;background-color:#111;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transform-origin:center}.preloader .preloader-logo{margin:0 0 20px;opacity:0}
-    </style>
+    <style>.global-wrapper.page-landing {opacity: 0;}.preloader {position: fixed;left: 0;top: 0;width: 100vw;height: 100vh;background-color: #111;z-index: 9999;display: flex;flex-direction: column;align-items: center;justify-content: center; transform-origin: center;}.preloader .preloader-logo {margin: 0 0 20px;opacity: 0;}.page-assembly .preloader {background-color: #6a3624;}</style>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-<header class="header">
-  <div class="container-fluid">
-    <div class="header-logo">
-      <a href="#">
-        <img src="./images/logo.svg" alt="" />
-      </a>
+<body>
+  <header class="header">
+    <div class="container-fluid">
+      <div class="header-logo">
+        <a href="#">
+          <img src="./images/logo.svg" alt="" />
+        </a>
+      </div>
+      <nav class="header-navigation">
+        <ul>
+          <li class="current-menu-item"><a href="creative.html">Creative</a></li>
+          <li><a href="assembly.html">Assembly</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="header-navigation">
-      <ul>
-        <li class="current-menu-item"><a href="creative.html">Creative</a></li>
-        <li><a href="assembly.html">Assembly</a></li>
-      </ul>
-    </nav>
+  </header>
+<div id="preloader" class="preloader">
+  <div class="preloader-logo">
+    <img src="./images/logo.svg" alt="" />
   </div>
-</header>
-
+</div>
 
 <div class="global-wrapper bg-dark">
     <main class="content">
@@ -173,26 +175,53 @@
             </div>
           </div>
         </section>
-        <section class="block-media">
+        <section class="block-media-slider bg-dark text-white">
           <div class="container-fluid">
-            <div class="swiper slider-image">
+            <div class="slider-controls">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                  <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
+                </g>
+              </svg>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <figure>
-                    <span><img src="images/img01.jpg" alt="" /></span>
-                    <figcaption>Image Caption goes here</figcaption>
+                    <span><img src="images/img06.jpg" alt="" /></span>
+                    <figcaption>Pro members get the oppertunity to co work on creative briefs</figcaption>
                   </figure>
                 </div>
                 <div class="swiper-slide">
                   <figure>
-                    <span><img src="images/img01.jpg" alt="" /></span>
-                    <figcaption>Image Caption goes here</figcaption>
+                    <span><img src="images/img06.jpg" alt="" /></span>
+                    <figcaption>All members can enjoy our social and networking events</figcaption>
                   </figure>
                 </div>
                 <div class="swiper-slide">
                   <figure>
-                    <span><img src="images/img01.jpg" alt="" /></span>
-                    <figcaption>Image Caption goes here</figcaption>
+                    <span><img src="images/img06.jpg" alt="" /></span>
+                    <figcaption>Pro members get the oppertunity to co work on creative briefs</figcaption>
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <span><img src="images/img06.jpg" alt="" /></span>
+                    <figcaption>All members can enjoy our social and networking events</figcaption>
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <span><img src="images/img06.jpg" alt="" /></span>
+                    <figcaption>Pro members get the oppertunity to co work on creative briefs</figcaption>
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure>
+                    <span><img src="images/img06.jpg" alt="" /></span>
+                    <figcaption>All members can enjoy our social and networking events</figcaption>
                   </figure>
                 </div>
               </div>

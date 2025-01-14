@@ -64,3 +64,23 @@
     }
   }
 }
+
+.page-assembly {
+  .btn {
+    &.btn-outline-dark {
+      svg path {
+        fill: $primary;
+      }
+
+      &:hover {
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+  }
+}

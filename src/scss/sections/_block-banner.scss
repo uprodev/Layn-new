@@ -46,6 +46,14 @@
       line-height: 1.4;
       margin: 0 0 1.2rem;
     }
+
+    .line {
+      @include staggered_transitions($nth: 1, $items: 20, $initial: 3, $step: 0.1);
+    }
+
+    .buttons span .btn {
+      transition-delay: 3.2s;
+    }
   }
 
   @include media-breakpoint-up(lg) {

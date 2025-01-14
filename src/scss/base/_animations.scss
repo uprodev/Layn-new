@@ -22,7 +22,9 @@
 .tab-pane p,
 .tab-pane li,
 .block-contact-form .block-header h2,
-.block-members h2 {
+.block-members h2,
+.video-title,
+figcaption {
   visibility: hidden;
 
   .line {

@@ -32,7 +32,7 @@
 
       &.in-view {
         &:after {
-          animation: counter1 1s linear forwards;
+          animation: counter1 0.25s linear forwards;
         }
       }
 
@@ -54,7 +54,7 @@
 
       &.in-view {
         &:after {
-          animation: counter2 2s linear forwards;
+          animation: counter2 0.5s linear forwards;
         }
       }
 
@@ -79,7 +79,7 @@
 
       &.in-view {
         &:after {
-          animation: counter3 3s linear forwards;
+          animation: counter3 0.75s linear forwards;
         }
       }
 
@@ -107,7 +107,7 @@
 
       &.in-view {
         &:after {
-          animation: counter4 4s linear forwards;
+          animation: counter4 1s linear forwards;
         }
       }
 
@@ -138,7 +138,7 @@
 
       &.in-view {
         &:after {
-          animation: counter5 5s linear forwards;
+          animation: counter5 1.25s linear forwards;
         }
       }
 
