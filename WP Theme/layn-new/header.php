@@ -17,7 +17,14 @@
 
 $logo = get_field('logo', 'options');
 $show_preloader = get_field('show_preloader', 'options');
+$preloader = get_field('preloader', get_the_ID());
 $preloader_logo = get_field('preloader_logo', 'options');
+
+if($preloader){
+    $preload = $preloader;
+}else{
+    $preload = $preloader_logo['url'];
+}
 
 if(is_front_page()){
     $style = ' page-landing bg-dark';
@@ -55,8 +62,8 @@ if(is_front_page()){
 <?php if( $show_preloader):?>
     <div id="preloader" class="preloader">
         <div class="preloader-logo">
-            <?php if($preloader_logo):?>
-                <img src="<?= $preloader_logo['url'];?>" alt="<?= $preloader_logo['alt'];?>" />
+            <?php if($preload):?>
+                <img src="<?= $preload;?>" alt="preloader" />
             <?php endif;?>
         </div>
     </div>
