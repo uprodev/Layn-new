@@ -35,3 +35,13 @@ function svg_upload_allow( $mimes ) {
 
     return $mimes;
 }
+
+function add_custom_body_class($classes) {
+
+    if (is_page(12)) {
+
+        $classes[] = 'page-assembly';
+    }
+    return $classes;
+}
+add_filter('body_class', 'add_custom_body_class');
