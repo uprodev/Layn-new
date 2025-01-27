@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
   const textsToSplit = document.querySelectorAll(".block-banner h1, .block-banner p, .block-intro h2, .block-text-headline h2, .block-text-headline p, .block-steps p, .block-services h2, .block-services h4, .block-services li, .cp-tabs .nav-link, .tab-pane p, .tab-pane li, .block-contact-form .block-header h2, .block-members h2, .video-title, figcaption");
 
   !(function () {
-    const blocks = document.querySelectorAll(".block-banner h1, .block-banner p, .block-intro h2, .block-text-headline h2, .block-text-headline p, .block-steps p, .block-services h2, .block-services h4, .block-services li, .cp-tabs .nav-link, .tab-pane p, .tab-pane li, .block-contact-form .block-header h2, .buttons, .block-map .block-header .subheadline, .block-members .block-header .subheadline, .block-members h2, .block-offer .block-header .subheadline, .block-services .block-header .subheadline, .block-text-headline .subheadline, .subheadline-animated, .counter, .video-title, figcaption");
+    const blocks = document.querySelectorAll(".block-banner h1, .block-banner p, .block-intro h2, .block-text-headline h2, .block-text-headline p, .block-steps p, .block-services h2, .block-services h4, .block-services li, .cp-tabs .nav-link, .tab-pane p, .tab-pane li, .block-contact-form .block-header h2, .buttons, .block-map .block-header .subheadline, .block-members .block-header .subheadline, .block-members h2, .block-offer .block-header .subheadline, .block-services .block-header .subheadline, .block-text-headline .subheadline, .block-steps .subheadline, .subheadline-animated, .counter, .video-title, figcaption");
     [].forEach.call(blocks, ($item) => {
       if ($item) {
         function onScroll() {

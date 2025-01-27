@@ -4,6 +4,8 @@
   font-size: 12px;
   background-color: $black;
   text-align: center;
+  position: relative;
+  z-index: 2;
 
   .socials {
     display: flex;

@@ -1,6 +1,11 @@
 .block-steps {
   padding: 22vh 0;
 
+  .subheadline {
+    margin: 0 0 4rem;
+    @extend .subheadline-animated;
+  }
+
   .row {
     --bs-gutter-y: 7.5rem;
     & > div {

@@ -13,90 +13,106 @@
     <style>.global-wrapper.page-landing {opacity: 0;}.preloader {position: fixed;left: 0;top: 0;width: 100vw;height: 100vh;background-color: #111;z-index: 9999;display: flex;flex-direction: column;align-items: center;justify-content: center; transform-origin: center;}.preloader .preloader-logo {margin: 0 0 20px;opacity: 0;}.page-assembly .preloader {background-color: #6a3624;}</style>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-<body>
-  <header class="header">
-    <div class="container-fluid">
-      <div class="header-logo">
-        <a href="#">
-          <img src="./images/logo.svg" alt="" />
-        </a>
-      </div>
-      <nav class="header-navigation">
-        <ul>
-          <li><a href="creative.html">Creative</a></li>
-          <li><a href="assembly.html">Assembly</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-<div id="preloader" class="preloader">
-  <div class="preloader-logo">
-    <img src="./images/logo.svg" alt="" />
-  </div>
-</div>
+
 
 <div class="global-wrapper page-landing bg-dark">
+    <body>
+      <header class="header">
+        <div class="container-fluid">
+          <div class="header-logo">
+            <a href="#">
+              <img src="./images/logo.svg" alt="" />
+            </a>
+          </div>
+          <nav class="header-navigation">
+            <ul>
+              <li><a href="creative.html">Creative</a></li>
+              <li><a href="assembly.html">Assembly</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
     <main class="content">
         <section class="block-landing">
-          <div class="column column--left">
+          <div class="landing-mobile d-lg-none">
             <div class="image"><img src="images/landing-left.jpg" alt="" /></div>
             <div class="text">
-              <div class="subheadline">LAYN Creative</div>
-              <h1>Creating with Creatives</h1>
-              <div class="buttons">
-                <span>
-                  <a href="creative.html" class="btn btn-outline-white">
-                    <span>See more</span>
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g>
-                        <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
-                        <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
-                      </g>
-                    </svg>
-                  </a>
-                </span>
-                <span>
-                  <a href="creative.html#form" class="btn btn-outline-white">
-                    <span>Get in touch</span>
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g>
-                        <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
-                        <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
-                      </g>
-                    </svg>
-                  </a>
-                </span>
+              <div class="landing-logo">
+                <img src="./images/logo.svg" alt="" />
               </div>
+              <ul>
+                <li><a href="creative.html">LAYN Creative</a></li>
+                <li><a href="assembly.html">LAYN Assembly</a></li>
+              </ul>
             </div>
           </div>
-          <div class="column column--right">
-            <div class="image"><img src="images/landing-right.jpg" alt="" /></div>
-            <div class="text">
-              <div class="subheadline">LAYN Assembly</div>
-              <h1>Empowering freelancers</h1>
-              <div class="buttons">
-                <span>
-                  <a href="assembly.html" class="btn btn-outline-white">
-                    <span>See more</span>
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g>
-                        <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
-                        <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
-                      </g>
-                    </svg>
-                  </a>
-                </span>
-                <span>
-                  <a href="assembly.html#form" class="btn btn-outline-white">
-                    <span>Get in touch</span>
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g>
-                        <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
-                        <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
-                      </g>
-                    </svg>
-                  </a>
-                </span>
+        
+          <div class="landing-desktop d-none d-lg-block h-100">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg column column--left">
+                  <div class="image"><img src="images/landing-left.jpg" alt="" /></div>
+                  <div class="text">
+                    <div class="subheadline">LAYN Creative</div>
+                    <h1>Creating with <br />Creatives</h1>
+                    <div class="buttons">
+                      <span>
+                        <a href="creative.html" class="btn btn-outline-white">
+                          <span>See more</span>
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                              <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                              <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
+                            </g>
+                          </svg>
+                        </a>
+                      </span>
+                      <span>
+                        <a href="creative.html#form" class="btn btn-outline-white">
+                          <span>Get in touch</span>
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                              <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                              <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
+                            </g>
+                          </svg>
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg column column--right">
+                  <div class="image"><img src="images/landing-right.jpg" alt="" /></div>
+                  <div class="text">
+                    <div class="subheadline">LAYN Assembly</div>
+                    <h1>Empowering <br />freelancers</h1>
+                    <div class="buttons">
+                      <span>
+                        <a href="assembly.html" class="btn btn-outline-white">
+                          <span>See more</span>
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                              <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                              <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
+                            </g>
+                          </svg>
+                        </a>
+                      </span>
+                      <span>
+                        <a href="assembly.html#form" class="btn btn-outline-white">
+                          <span>Get in touch</span>
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                              <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                              <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
+                            </g>
+                          </svg>
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,104 +1,211 @@
+.global-wrapper.page-landing {
+  opacity: 1;
+}
+
+.page-landing {
+  @include media-breakpoint-down(lg) {
+    .header {
+      display: none;
+    }
+
+    .footer {
+      padding: 22px 0;
+
+      .container-fluid {
+        width: calc(67.73% + #{$container-gutter});
+        min-width: calc(254px + #{$container-gutter});
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+
+        a {
+          display: block;
+          width: 15px;
+          margin: 0 16px 0 0;
+
+          svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            path {
+              fill: #808080;
+            }
+          }
+
+          &:hover {
+            svg {
+              path {
+                fill: $white;
+              }
+            }
+          }
+        }
+      }
+
+      .copyright {
+        margin: 0;
+        color: #808080;
+        letter-spacing: 0;
+        font-size: 10px;
+      }
+
+      .row {
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        & > div {
+          width: auto;
+
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 .block-landing {
   height: 100%;
-  display: flex;
-  flex-direction: column;
 
-  .column {
-    height: 50%;
-    position: relative;
-    overflow: hidden;
+  .landing-mobile {
+    height: 100%;
 
     .image {
-      @include abs;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100vw;
+      left: 0;
+      overflow: hidden;
 
       img {
-        @include img-fit;
-        opacity: 0.1;
+        opacity: 0.5;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right -110px top 50%;
         position: relative;
         z-index: 1;
         transform-origin: center;
-        transition: transform 3s ease, opacity 0.3s linear;
-      }
-
-      &:before {
-        content: "";
-        @include abs;
-        transition: all 0.5s;
-        background-color: $black;
+        filter: grayscale(1);
       }
     }
 
     .text {
-      max-width: 340px;
+      width: 67.73%;
+      min-width: 254px;
+      margin: auto;
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       position: relative;
       z-index: 9;
+      padding: 0 0 16px;
       color: $white;
-      padding: 0 16px;
 
-      .subheadline {
-        margin: 0 0 1.2rem;
-        padding: 1.2rem 0 0;
+      .landing-logo {
+        width: 74px;
+        margin: -14px 0 0;
 
-        &:before {
-          top: 0;
-          bottom: auto;
+        img {
+          @include img-fit;
         }
       }
 
-      h1 {
-        font-family: $font-family-base;
-        font-size: 1.5rem;
-        line-height: 1.4;
-      }
+      ul {
+        margin: auto 0 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid #c9c9c9;
+        letter-spacing: 0;
+        font-weight: 500;
 
-      .buttons {
-        padding: 1.2rem 0 0;
-      }
-    }
-  }
-
-  @include media-breakpoint-up(md) {
-    .column {
-      .text {
-        .subheadline {
-          margin: 0 0 1.5rem;
+        li {
+          border-bottom: 1px solid #c9c9c9;
         }
 
-        h1 {
-          font-size: 2rem;
-        }
-
-        .buttons {
-          padding: 1.5rem 0 0;
+        a {
+          display: block;
+          font-size: 19px;
+          padding: 24px 0 28px;
+          text-decoration: none;
+          color: #808080;
         }
       }
     }
   }
 
-  @include media-breakpoint-up(lg) {
-    flex-direction: row;
+  .landing-desktop {
+    .container-fluid {
+      height: 100%;
+
+      .row {
+        height: 100%;
+      }
+    }
 
     .column {
-      height: auto;
+      height: 100%;
       width: 50%;
 
       .image {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 50vw;
+        left: 0;
+        overflow: hidden;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          transition: all 0.5s;
+          background-color: $black;
+        }
+
         img {
           opacity: 1;
+          display: block;
+          width: 100%;
+          height: 100%;
+          -o-object-fit: cover;
+          object-fit: cover;
+          position: relative;
+          z-index: 1;
+          transform-origin: center;
+          transition: transform 3s ease, opacity 0.3s linear;
         }
       }
 
       .text {
-        padding: 0 16px 120px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         justify-content: flex-end;
+        position: relative;
+        z-index: 9;
+        padding: 0 0 10.7vh;
+        color: $white;
 
         .subheadline {
+          margin: 0 0 1.5rem;
+          padding: 1.2rem 0 0;
           opacity: 0;
           transition: all 0.5s;
+
+          &:before {
+            top: 0;
+            bottom: auto;
+          }
 
           &:before {
             transform: scaleX(0);
@@ -110,9 +217,13 @@
         h1 {
           transition: all 1s;
           opacity: 0;
+          font-family: $font-family-base;
+          font-size: 2rem;
+          line-height: 1.4;
         }
 
         .buttons {
+          padding: 1.5rem 0 0;
           transition: all 1s;
           opacity: 0;
 
@@ -162,12 +273,26 @@
                 transform: translateY(0);
                 transition-delay: 0.6s;
               }
+
+              &:hover {
+                span {
+                  transition-delay: 0s;
+                }
+              }
             }
           }
         }
       }
 
       &--right {
+        .text {
+          padding-left: calc(#{$container-gutter-lg} / 2);
+        }
+
+        .image {
+          left: 50%;
+        }
+
         &:hover {
           .image {
             img {
@@ -179,19 +304,23 @@
     }
   }
 
-  @include media-breakpoint-up(xl) {
-    .column {
-      &--left {
-        .text {
-          margin-left: calc(50vw - #{$container-max} / 2);
-          padding-left: 5px;
+  @include media-breakpoint-up(sm) {
+    .landing-mobile {
+      .image {
+        img {
+          object-position: center;
         }
       }
+    }
+  }
 
-      &--right {
-        .text {
-          margin-left: calc(#{$container-max} / 12);
-          padding-left: 11px;
+  @include media-breakpoint-up(xl) {
+    .landing-desktop {
+      .column {
+        &--right {
+          .text {
+            padding-left: calc(50vw - 726px);
+          }
         }
       }
     }
