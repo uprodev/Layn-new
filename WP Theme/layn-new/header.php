@@ -10,7 +10,7 @@
         .global-wrapper.page-landing {opacity: 0;}.preloader {position: fixed;left: 0;top: 0;width: 100vw;height: 100vh;background-color: #111;z-index: 9999;display: flex;flex-direction: column;align-items: center;justify-content: center; transform-origin: center;}.preloader .preloader-logo {margin: 0 0 20px;opacity: 0;}.page-assembly .preloader {background-color: #6a3624;}
     </style>
 
-		<?php wp_head();?>
+    <?php wp_head();?>
 </head>
 
 <?php
@@ -37,37 +37,39 @@ if(is_front_page()){
     }
 }
 
+$body_class = is_page(12) ? 'page-assembly' : '';
+
 ?>
 
-<body <?php body_class() ?>>
-<header class="header">
-    <div class="container-fluid">
-        <div class="header-logo">
-            <a href="<?= get_home_url();?>">
-                <?php if($logo):?>
-                    <img src="<?= $logo['url'];?>" alt="<?= $logo['alt'];?>" />
+<body <?php body_class($body_class) ?>>
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-logo">
+                <a href="<?= get_home_url();?>">
+                    <?php if($logo):?>
+                        <img src="<?= $logo['url'];?>" alt="<?= $logo['alt'];?>" />
+                    <?php endif;?>
+                </a>
+            </div>
+            <nav class="header-navigation">
+                <?php wp_nav_menu([
+                    'theme_location' => 'main-menu',
+                    'container' => false,
+                    'menu_class' => '',
+                ]);?>
+            </nav>
+        </div>
+    </header>
+
+    <?php if( $show_preloader):?>
+        <div id="preloader" class="preloader">
+            <div class="preloader-logo">
+                <?php if($preload):?>
+                    <img src="<?= $preload;?>" alt="preloader" />
                 <?php endif;?>
-            </a>
+            </div>
         </div>
-        <nav class="header-navigation">
-            <?php wp_nav_menu([
-                'theme_location' => 'main-menu',
-                'container' => false,
-                'menu_class' => '',
-            ]);?>
-        </nav>
-    </div>
-</header>
+    <?php endif;?>
 
-<?php if( $show_preloader):?>
-    <div id="preloader" class="preloader">
-        <div class="preloader-logo">
-            <?php if($preload):?>
-                <img src="<?= $preload;?>" alt="preloader" />
-            <?php endif;?>
-        </div>
-    </div>
-<?php endif;?>
-
-<div class="global-wrapper<?= $style;?>">
-    <main class="content">
+    <div class="global-wrapper<?= $style;?>">
+        <main class="content">

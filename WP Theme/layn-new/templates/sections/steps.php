@@ -1,5 +1,6 @@
 <?php
 
+$subtitle = get_sub_field('subtitle');
 $text = get_sub_field('text');
 $steps = get_sub_field('steps');
 $link = get_sub_field('link');
@@ -8,14 +9,21 @@ $link = get_sub_field('link');
 
 <section class="block-steps bg-black">
     <div class="container-fluid">
-        <div class="row">
-            <?php if($steps):
-                $s = 1;
-                foreach ($steps as $step):?>
-                    <div class="col-md-4 col-lg-3">
-                        <span class="icon">0<span class="counter counter<?= $s;?>"></span></span>
-                        <p><?= $step['step'];?></p>
-                    </div>
+
+        <?php if ($subtitle): ?>
+            <div class="block-header">
+              <div class="subheadline"><?= $subtitle ?></div>
+          </div>
+      <?php endif ?>
+      
+      <div class="row">
+        <?php if($steps):
+            $s = 1;
+            foreach ($steps as $step):?>
+                <div class="col-md-4 col-lg-3">
+                    <span class="icon">0<span class="counter counter<?= $s;?>"></span></span>
+                    <p><?= $step['step'];?></p>
+                </div>
                 <?php $s++; endforeach;
             endif;?>
 
