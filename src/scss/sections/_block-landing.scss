@@ -127,14 +127,48 @@
 
         li {
           border-bottom: 1px solid #c9c9c9;
-        }
 
-        a {
-          display: block;
-          font-size: 19px;
-          padding: 24px 0 28px;
-          text-decoration: none;
-          color: #808080;
+          .acc-toggler {
+            display: block;
+            background: none;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            appearance: none;
+            font-size: 19px;
+            padding: 24px 0 28px;
+            text-decoration: none;
+            color: #808080;
+            font-weight: 500;
+          }
+
+          .acc-collapse {
+            display: none;
+
+            h1 {
+              font-size: 1.55rem;
+              margin: 0 0 50px;
+            }
+
+            .buttons {
+              padding: 0 0 32px;
+
+              & > span + span {
+                margin-top: 1.85rem;
+              }
+
+              .btn {
+                width: 186px;
+                height: 41px;
+                font-size: 13px;
+
+                svg {
+                  width: 14px;
+                  height: auto;
+                }
+              }
+            }
+          }
         }
       }
     }

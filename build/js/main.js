@@ -83,6 +83,15 @@ jQuery(document).ready(function ($) {
     video.get(0).play();
   });
 
+  $(".acc-toggler").on("click", function () {
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active").next(".acc-collapse").slideUp(300);
+    } else {
+      $(".acc-toggler.active").removeClass("active").next(".acc-collapse").slideUp(300);
+      $(this).addClass("active").next(".acc-collapse").slideDown(300);
+    }
+  });
+
   document.querySelectorAll(".subtitle").forEach((subtitle) => {
     gsap.to(subtitle, {
       scrollTrigger: {
