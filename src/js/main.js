@@ -86,9 +86,16 @@ jQuery(document).ready(function ($) {
   $(".acc-toggler").on("click", function () {
     if ($(this).hasClass("active")) {
       $(this).removeClass("active").next(".acc-collapse").slideUp(300);
+      $(this).closest(".landing-mobile").removeClass("landing-mobile--open");
     } else {
       $(".acc-toggler.active").removeClass("active").next(".acc-collapse").slideUp(300);
       $(this).addClass("active").next(".acc-collapse").slideDown(300);
+      $(this).closest(".landing-mobile").addClass("landing-mobile--open");
+    }
+    if ($(this).data("panel") === "assembly") {
+      $(this).closest(".landing-mobile").addClass("landing-mobile--assembly");
+    } else {
+      $(this).closest(".landing-mobile").removeClass("landing-mobile--assembly");
     }
   });
 
