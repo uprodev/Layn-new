@@ -9,9 +9,14 @@ $link = get_sub_field('link');
 
 <section id="offer" class="block-text-headline">
     <div class="container-fluid">
+
         <?php if ($subtitle) : ?>
             <div class="block-header">
-                <div class="subheadline"><?= $subtitle;?></div>
+                <div class="row">
+                    <div class="col-md-4 col-lg-2">
+                        <div class="subheadline"><?= $subtitle;?></div>
+                    </div>
+                </div>
             </div>
         <?php endif; ?>
 
@@ -21,7 +26,7 @@ $link = get_sub_field('link');
                     <h2><?= $title;?></h2>
                 <?php endif; ?>
             </div>
-            <div class="col-md-8 col-lg-7">
+            <div class="col-md-8 col-lg-6">
                 <?= $text;?>
                 <?php if ($link) :
                     $link_url = $link['url'];

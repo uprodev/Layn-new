@@ -42,34 +42,34 @@ $body_class = is_page(12) ? 'page-assembly' : '';
 ?>
 
 <body <?php body_class($body_class) ?>>
-    <header class="header">
-        <div class="container-fluid">
-            <div class="header-logo">
-                <a href="<?= get_home_url();?>">
-                    <?php if($logo):?>
-                        <img src="<?= $logo['url'];?>" alt="<?= $logo['alt'];?>" />
-                    <?php endif;?>
-                </a>
-            </div>
-            <nav class="header-navigation">
-                <?php wp_nav_menu([
-                    'theme_location' => 'main-menu',
-                    'container' => false,
-                    'menu_class' => '',
-                ]);?>
-            </nav>
-        </div>
-    </header>
-
-    <?php if( $show_preloader):?>
-        <div id="preloader" class="preloader">
-            <div class="preloader-logo">
-                <?php if($preload):?>
-                    <img src="<?= $preload;?>" alt="preloader" />
-                <?php endif;?>
-            </div>
-        </div>
-    <?php endif;?>
-
     <div class="global-wrapper<?= $style;?>">
+        <header class="header">
+            <div class="container-fluid">
+                <div class="header-logo">
+                    <a href="<?= get_home_url();?>">
+                        <?php if($logo):?>
+                            <img src="<?= $logo['url'];?>" alt="<?= $logo['alt'];?>" />
+                        <?php endif;?>
+                    </a>
+                </div>
+                <nav class="header-navigation">
+                    <?php wp_nav_menu([
+                        'theme_location' => 'main-menu',
+                        'container' => false,
+                        'menu_class' => '',
+                    ]);?>
+                </nav>
+            </div>
+        </header>
+
+        <?php if( $show_preloader):?>
+            <div id="preloader" class="preloader">
+                <div class="preloader-logo">
+                    <?php if($preload):?>
+                        <img src="<?= $preload;?>" alt="preloader" />
+                    <?php endif;?>
+                </div>
+            </div>
+        <?php endif;?>
+
         <main class="content">

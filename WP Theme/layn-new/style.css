@@ -2,3 +2,9 @@
 Theme Name: Layn
 Description: Theme WP for Layn
 */
+
+@media (max-width: 575px){
+	.block-landing .landing-mobile .image img{
+		filter: grayscale(0);
+	}
+}

@@ -12,7 +12,11 @@ $locations = get_sub_field('locations');
 
         <?php if($title):?>
             <div class="block-header">
-                <div class="subheadline"><?= $title;?></div>
+                <div class="row">
+                    <div class="col-md-4 col-lg-2">
+                        <div class="subheadline"><?= $title;?></div>
+                    </div>
+                </div>
             </div>
         <?php endif;?>
 
@@ -31,7 +35,7 @@ $locations = get_sub_field('locations');
 
         <?php if($locations): $m = 1; ?>
             <div class="cp-tabs">
-                <div class="row justify-content-between">
+                <div class="row justify-content-between gx-lg-0">
                     <div class="col-md-4">
                         <nav class="nav nav-tabs">
                             <ul id="locationTabs" role="tablist">
@@ -40,30 +44,30 @@ $locations = get_sub_field('locations');
                                         <a class="nav-link<?= $m==1?' active':'';?>" id="location<?= $m;?>Nav"
                                            data-bs-toggle="tab" href="#location<?= $m;?>" role="tab"
                                            aria-controls="location<?= $m;?>" aria-selected="true" data-lat="<?= $loc['map']['lat'];?>" data-lng="<?= $loc['map']['lng'];?>" data-img="<?= $loc['image']['url'];?>" data-index="<?= $m-1; ?>"><?= $loc['name'];?></a>
-                                    </li>
-                                <?php $m++; endforeach; $m = 1;?>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-md-8 col-lg-7">
-                        <div class="tab-content" id="locationsContent">
-                            <?php foreach($locations as $loc):?>
-                                <div class="tab-pane fade<?= $m==1?' show active':'';?>" id="location<?= $m;?>" role="tabpanel" aria-labelledby="location<?= $m;?>-tab">
-                                    <?php if($loc['text']):?>
-                                        <p><?= $loc['text'];?></p>
-                                    <?php endif;?>
-                                    <?php if($loc['bottom_text']):?>
-                                        <div class="tab-footer">
-                                            <p><?= $loc['bottom_text'];?></p>
-                                        </div>
-                                    <?php endif;?>
+                                       </li>
+                                       <?php $m++; endforeach; $m = 1;?>
+                                   </ul>
+                               </nav>
+                           </div>
+                           <div class="col-md-8 col-lg-6">
+                            <div class="tab-content" id="locationsContent">
+                                <?php foreach($locations as $loc):?>
+                                    <div class="tab-pane fade<?= $m==1?' show active':'';?>" id="location<?= $m;?>" role="tabpanel" aria-labelledby="location<?= $m;?>-tab">
+                                        <?php if($loc['text']):?>
+                                            <p><?= $loc['text'];?></p>
+                                        <?php endif;?>
+                                        <?php if($loc['bottom_text']):?>
+                                            <div class="tab-footer">
+                                                <p><?= $loc['bottom_text'];?></p>
+                                            </div>
+                                        <?php endif;?>
+                                    </div>
+                                    <?php $m++; endforeach; $m = 1;?>
                                 </div>
-                            <?php $m++; endforeach; $m = 1;?>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        <?php endif;?>
+                <?php endif;?>
 
-    </div>
-</section>
+            </div>
+        </section>

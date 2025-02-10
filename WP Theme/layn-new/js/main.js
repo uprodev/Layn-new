@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
   const textsToSplit = document.querySelectorAll(".block-banner h1, .block-banner p, .block-intro h2, .block-text-headline h2, .block-text-headline p, .block-steps p, .block-services h2, .block-services h4, .block-services li, .cp-tabs .nav-link, .tab-pane p, .tab-pane li, .block-contact-form .block-header h2, .block-members h2, .video-title, figcaption");
 
   !(function () {
-    const blocks = document.querySelectorAll(".block-banner h1, .block-banner p, .block-intro h2, .block-text-headline h2, .block-text-headline p, .block-steps p, .block-services h2, .block-services h4, .block-services li, .cp-tabs .nav-link, .tab-pane p, .tab-pane li, .block-contact-form .block-header h2, .buttons, .block-map .block-header .subheadline, .block-members .block-header .subheadline, .block-members h2, .block-offer .block-header .subheadline, .block-services .block-header .subheadline, .block-text-headline .subheadline, .block-steps .subheadline, .subheadline-animated, .counter, .video-title, figcaption");
+    const blocks = document.querySelectorAll(".block-banner h1, .block-banner p, .block-intro h2, .block-text-headline h2, .block-text-headline p, .block-steps p, .block-services h2, .block-services h4, .block-services li, .cp-tabs .nav-link, .tab-pane p, .tab-pane li, .block-contact-form .block-header h2, .buttons, .block-map .block-header .subheadline, .block-members .block-header .subheadline, .block-members h2, .block-offer .block-header .subheadline, .block-services .block-header .subheadline, .block-text-headline .subheadline, .block-steps .subheadline, .subheadline-animated, .counter, .video-title, figcaption, .block-steps hr");
     [].forEach.call(blocks, ($item) => {
       if ($item) {
         function onScroll() {
@@ -81,6 +81,22 @@ jQuery(document).ready(function ($) {
     var video = $(this).prev("video");
     video.attr("controls", true);
     video.get(0).play();
+  });
+
+  $(".acc-toggler").on("click", function () {
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active").next(".acc-collapse").slideUp(300);
+      $(this).closest(".landing-mobile").removeClass("landing-mobile--open");
+    } else {
+      $(".acc-toggler.active").removeClass("active").next(".acc-collapse").slideUp(300);
+      $(this).addClass("active").next(".acc-collapse").slideDown(300);
+      $(this).closest(".landing-mobile").addClass("landing-mobile--open");
+    }
+    if ($(this).data("panel") === "assembly") {
+      $(this).closest(".landing-mobile").addClass("landing-mobile--assembly");
+    } else {
+      $(this).closest(".landing-mobile").removeClass("landing-mobile--assembly");
+    }
   });
 
   document.querySelectorAll(".subtitle").forEach((subtitle) => {

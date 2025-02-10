@@ -9,16 +9,23 @@ $membership = get_sub_field('membership');
 <section class="block-members">
     <div class="container-fluid">
         <div class="block-header">
-            <div class="row">
-                <div class="col-md-8 col-lg-6">
-                    <?php if($subtitle):?>
+
+            <?php if($subtitle):?>
+                <div class="row">
+                    <div class="col-md-4 col-lg-2">
                         <div class="subheadline"><?= $subtitle;?></div>
-                    <?php endif;?>
-                    <?php if($title):?>
+                    </div>
+                </div>                    
+            <?php endif;?>
+
+            <?php if($title):?>
+                <div class="row">
+                    <div class="col-md-8 col-lg-6">
                         <h2><?= $title;?></h2>
-                    <?php endif;?>
+                    </div>
                 </div>
-            </div>
+            <?php endif;?>
+
         </div>
 
         <?php if($membership):
@@ -26,27 +33,27 @@ $membership = get_sub_field('membership');
             <div class="cp-tabs">
                 <div class="nav-wrapper">
                     <div class="row">
-                        <div class="col-md-6 col-lg-5">
+                        <div class="col-md-6 col-lg-4">
                             <nav class="nav nav-tabs">
                                 <ul role="tablist">
                                     <?php foreach($membership as $member):?>
                                         <li class="nav-item">
                                             <a class="nav-link<?= $i==1?' active':'';?>" id="tab<?= $i;?>Nav" data-bs-toggle="tab" href="#<?= strtolower($member['name']);?>" role="tab" aria-controls="social" aria-selected="true"><?= $member['name'];?></a>
                                         </li>
-                                    <?php $i++; endforeach; $i=1;?>
-                                </ul>
-                            </nav>
+                                        <?php $i++; endforeach; $i=1;?>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="tab-content" id="tabContent">
-                    <?php foreach($membership as $member):
-                        $link = $member['link'];?>
-                        <div class="tab-pane fade<?= $i==1?' show active':'';?>" id="<?= strtolower($member['name']);?>"
+                    <div class="tab-content" id="tabContent">
+                        <?php foreach($membership as $member):
+                            $link = $member['link'];?>
+                            <div class="tab-pane fade<?= $i==1?' show active':'';?>" id="<?= strtolower($member['name']);?>"
                              role="tabpanel">
-                            <div class="row justify-content-between">
-                                <div class="col-md-6 col-lg-5">
+                             <div class="row justify-content-between">
+                                <div class="col-md-6 col-lg-4">
                                     <div class="text">
                                         <?= $member['text'];?>
                                         <?php if( $link ):
@@ -68,11 +75,11 @@ $membership = get_sub_field('membership');
                                         <?php endif; ?>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 ps-lg-0">
                                     <figure>
                                         <?php if($member['image']):?>
                                             <span><img src="<?= $member['image']['url'];?>" alt="<?=
-                                                $member['image']['alt'];?>" /></span>
+                                            $member['image']['alt'];?>" /></span>
                                         <?php endif;?>
                                         <?php if($member['caption']):?>
                                             <figcaption><?= $member['caption']; ?></figcaption>
@@ -81,10 +88,10 @@ $membership = get_sub_field('membership');
                                 </div>
                             </div>
                         </div>
-                    <?php $i++; endforeach; $i=1;?>
+                        <?php $i++; endforeach; $i=1;?>
+                    </div>
                 </div>
-            </div>
-        <?php endif;?>
+            <?php endif;?>
 
-    </div>
-</section>
+        </div>
+    </section>

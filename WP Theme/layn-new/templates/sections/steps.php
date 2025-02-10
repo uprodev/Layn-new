@@ -20,14 +20,14 @@ $link = get_sub_field('link');
         <?php if($steps):
             $s = 1;
             foreach ($steps as $step):?>
-                <div class="col-md-4 col-lg-3">
+                <div class="col-md-4">
                     <span class="icon">0<span class="counter counter<?= $s;?>"></span></span>
                     <p><?= $step['step'];?></p>
                 </div>
                 <?php $s++; endforeach;
             endif;?>
 
-            <div class="col-md-4 col-lg-3">
+            <div class="col-md-4">
                 <div class="d-flex flex-column h-100 justify-content-end">
                     <?php if($text):?>
                         <p><?= $text;?></p>

@@ -9,16 +9,23 @@ $subtitle = get_sub_field('subtitle');
 <section id="services" class="block-services">
     <div class="container-fluid">
         <div class="block-header">
-            <div class="row">
-                <div class="col-md-8 col-lg-6">
-                    <?php if ($subtitle) : ?>
+
+            <?php if ($subtitle) : ?>
+                <div class="row">
+                    <div class="col-md-4 col-lg-2">
                         <div class="subheadline"><?= $subtitle;?></div>
-                    <?php endif; ?>
-                    <?php if ($title) : ?>
-                        <h2><?= $title;?></h2>
-                    <?php endif; ?>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
+
+            <?php if ($title) : ?>
+                <div class="row">
+                    <div class="col-md-8 col-lg-6">
+                        <h2><?= $title;?></h2>
+                    </div>
+                </div>
+            <?php endif; ?>
+
         </div>
 
         <?php if($services) : ?>
