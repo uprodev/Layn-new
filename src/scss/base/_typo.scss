@@ -77,7 +77,8 @@ small {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 240px;
+    width: 100%;
+    max-width: 240px;
     height: 1px;
     background-color: $gray-300;
   }
