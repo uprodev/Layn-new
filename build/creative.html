@@ -13,11 +13,7 @@
     <style>.global-wrapper.page-landing {opacity: 0;}.preloader {position: fixed;left: 0;top: 0;width: 100vw;height: 100vh;background-color: #111;z-index: 9999;display: flex;flex-direction: column;align-items: center;justify-content: center; transform-origin: center;}.preloader .preloader-logo {margin: 0 0 20px;opacity: 0;}.page-assembly .preloader {background-color: #6a3624;}</style>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-<div id="preloader" class="preloader">
-  <div class="preloader-logo">
-    <img src="./images/logo.svg" alt="" />
-  </div>
-</div>
+<!-- //= parts/preloader.html -->
 
 <div class="global-wrapper bg-dark">
     <body>
@@ -190,12 +186,14 @@
           <div class="container-fluid">
             <div class="slider-controls">
               <div class="swiper-pagination"></div>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g>
-                  <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
-                  <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
-                </g>
-              </svg>
+              <div class="swiper-button-next">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                    <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
+                  </g>
+                </svg>
+              </div>
             </div>
             <div class="swiper">
               <div class="swiper-wrapper">
@@ -546,24 +544,68 @@
                     <div class="tab-pane fade show active" id="location1" role="tabpanel" aria-labelledby="location1-tab">
                       <p>To provide the best creative services we use a balance of remote and collaborative working. By having local city HQ locations we can bring the local team members together to work collaboratively. Our first HQ is located in Battersea Power Station, being able to service London with local premium design services.</p>
                       <div class="tab-footer">
+                        <div class="buttons">
+                          <a href="https://maps.app.goo.gl/znfo6eDGiattLXf96" class="btn btn-outline-dark btn-anchor">
+                            Get directions
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                                <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
+                              </g>
+                            </svg>
+                          </a>
+                        </div>
                         <p>LAYN Creative<br />Battersea Power Station, 18, Circus Rd S, London SW11 8BZ</p>
                       </div>
                     </div>
                     <div class="tab-pane fade" id="location2" role="tabpanel" aria-labelledby="location2-tab">
                       <p>To provide the best creative services we use a balance of remote and collaborative working. By having local city HQ locations we can bring the local team members together to work collaboratively. Our first HQ is located in Battersea Power Station, being able to service London with local premium design services.</p>
                       <div class="tab-footer">
+                        <div class="buttons">
+                          <a href="https://maps.app.goo.gl/znfo6eDGiattLXf96" class="btn btn-outline-dark btn-anchor">
+                            Get directions
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                                <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
+                              </g>
+                            </svg>
+                          </a>
+                        </div>
                         <p>LAYN Creative<br />Battersea Power Station, 18, Circus Rd S, London SW11 8BZ</p>
                       </div>
                     </div>
                     <div class="tab-pane fade" id="location3" role="tabpanel" aria-labelledby="location3-tab">
                       <p>To provide the best creative services we use a balance of remote and collaborative working. By having local city HQ locations we can bring the local team members together to work collaboratively. Our first HQ is located in Battersea Power Station, being able to service London with local premium design services.</p>
                       <div class="tab-footer">
+                        <div class="buttons">
+                          <a href="https://maps.app.goo.gl/znfo6eDGiattLXf96" class="btn btn-outline-dark btn-anchor">
+                            Get directions
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                                <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
+                              </g>
+                            </svg>
+                          </a>
+                        </div>
                         <p>LAYN Creative<br />Battersea Power Station, 18, Circus Rd S, London SW11 8BZ</p>
                       </div>
                     </div>
                     <div class="tab-pane fade" id="location4" role="tabpanel" aria-labelledby="location4-tab">
                       <p>To provide the best creative services we use a balance of remote and collaborative working. By having local city HQ locations we can bring the local team members together to work collaboratively. Our first HQ is located in Battersea Power Station, being able to service London with local premium design services.</p>
                       <div class="tab-footer">
+                        <div class="buttons">
+                          <a href="https://maps.app.goo.gl/znfo6eDGiattLXf96" class="btn btn-outline-dark btn-anchor">
+                            Get directions
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <g>
+                                <path d="M1.85862 0.443138L0.882812 1.41895L14.1693 14.7055L15.1452 13.7297L1.85862 0.443138Z" fill="white" />
+                                <path d="M17.9998 16.1804V3.40039H16.6198V16.1804H3.83984V17.5604H16.6198H17.9998V16.1804Z" fill="white" />
+                              </g>
+                            </svg>
+                          </a>
+                        </div>
                         <p>LAYN Creative<br />Battersea Power Station, 18, Circus Rd S, London SW11 8BZ</p>
                       </div>
                     </div>
